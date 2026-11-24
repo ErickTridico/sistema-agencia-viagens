@@ -1,15 +1,17 @@
 package main;
 
+import java.time.LocalDate;
+
 public class Reserva {
 
     private int codigo;
-    private String data;
+    private LocalDate data;
     private String status;
 
     private Cliente cliente;
     private PacoteViagem pacote;
 
-    public Reserva(int codigo, String data, Cliente cliente, PacoteViagem pacote) {
+    public Reserva(int codigo, LocalDate data, Cliente cliente, PacoteViagem pacote) {
         this.codigo = codigo;
         this.data = data;
         this.cliente = cliente;
@@ -33,7 +35,7 @@ public class Reserva {
         return codigo;
     }
 
-    public String getData() {
+    public LocalDate getData() {
         return data;
     }
 
