@@ -1,5 +1,8 @@
 package main;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 public class Executor {
 
     public static void main(String[] args) {
@@ -23,7 +26,7 @@ public class Executor {
 
         // Reserva
         Reserva reserva = new Reserva(
-            1, "25/12/2026", cliente, pacote
+            1, LocalDate.of(2026, 12, 25), cliente, pacote
         );
 
         cliente.realizarReserva(reserva);
@@ -47,7 +50,7 @@ public class Executor {
 
         System.out.println("\n=== RESERVA ===");
         System.out.println("Codigo: " + reserva.getCodigo());
-        System.out.println("Data: " + reserva.getData());
+        System.out.println("Data: " + reserva.getData().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
         System.out.println("Status: " + reserva.getStatus());
     }
 }
